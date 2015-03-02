@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :books
+  
+  get 'manage/tardies'
+  match '/atrasos' => 'manage#tardies', via: [:get, :post]
+
+  devise_for :users
+  resources :books do
+    resources :rents, :except => [:edit,:show,:index]
+  end  
+
+  root to: "books#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

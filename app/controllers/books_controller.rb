@@ -1,24 +1,29 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
+    @title = "Todos os livros"
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @book = Book.find(params[:id])
+    @title = @book.title
   end
 
   # GET /books/new
   def new
     @book = Book.new
+    @title = "Criando um livro"
   end
 
   # GET /books/1/edit
   def edit
+    @title = "Editando livro"
   end
 
   # POST /books

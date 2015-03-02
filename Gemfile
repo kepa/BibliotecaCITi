@@ -41,3 +41,5 @@ gem 'rails_12factor', group: :production
 
 gem 'devise'
 
+gem 'delayed_job_active_record'
+

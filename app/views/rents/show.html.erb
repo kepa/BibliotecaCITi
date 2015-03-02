@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rent.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @rent.email %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @rent.due_date %>
+</p>
+
+<%= link_to 'Back', @rent.book %>
