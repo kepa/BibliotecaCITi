@@ -21,12 +21,14 @@ class RentsController < ApplicationController
     
     if @book.rents.empty? 
       
-       @rent = @book.rents.new(rent_params)
+      @rent = @book.rents.new(rent_params)
       @rent.save
       respond_to do |format|
         if @rent.save
           @book.update(taken: true)
           @book.save
+          RentMailer.delay(run_at: 2.minutes.from_now).rent_confirmation(@rent)
+          RentMailer.delay(run_at: @rent.due_date).rent_warning(@rent)
           format.html { redirect_to @rent.book, notice: 'Parabéns livro alugado!' }         
         else
           format.html { render :new }
