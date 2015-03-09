@@ -29,6 +29,7 @@ class RentsController < ApplicationController
           @book.save
           RentMailer.delay(run_at: 2.minutes.from_now).rent_confirmation(@rent)
           RentMailer.delay(run_at: @rent.due_date).rent_warning(@rent)
+          RentMailer.delay(run_at: @rent.due_date).rent_end(@rent)
           format.html { redirect_to @rent.book, notice: 'Parabéns livro alugado!' }         
         else
           format.html { render :new }

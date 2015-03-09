@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
   get 'manage/tardies'
   match '/atrasos' => 'manage#tardies', via: [:get, :post]
 

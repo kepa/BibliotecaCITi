@@ -1,5 +1,10 @@
-<h1>RentMailer#rent_confirmation</h1>
+<h1>Aluguel de <%= @rent.book.title %> feito!</h1>
 
 <p>
-  <%= @rent.name %>, seu aluguel foi confimado!
+  <%= @rent.name %>, seu aluguel foi confimado! Lembrando que o seu prazo de entrega é até <b><%= @rent.due_date.strftime("%d / %m / %Y") %></b>
+</p>
+
+<p>
+	Caso queira cancelar este aluguel, acesse aqui:
+	<%= link_to 'Devolver o livro',[@rent.book, @rent], method: :delete, data: { confirm: 'Tem certeza?' } %>
 </p>

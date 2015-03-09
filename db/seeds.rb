@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times  do
+
+	Book.create!(title: 'FIOS', author: 'John Green', taken: false)
+
+end

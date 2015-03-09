@@ -75,4 +75,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: 'biblioteca.citi.org.br', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :address => "smtp.webfaction.com",
+  :port => 587,
+  :domain => "lucas.falbo@citi.org.br ",
+  :authentication => "plain",
+  :enable_starttls_auto => true,
+  :user_name => "citi_mail",
+  :password => "kDYPtjaYnDDfPYEtDZ6KpzDj"
+}
+
 end

@@ -1,5 +1,14 @@
-<h1>RentMailer#rent_warning</h1>
+<body style="background-color:#84C441;">
+<div style="width=600px; margin:0 auto; padding:20px;border:1px black solid;background-color:white;">
+<h1>Seu aluguel na biblioteca está acabando!</h1>
 
 <p>
-  <%= @rent.name %>, seu aluguel termina daqui a uma semana!
+  <%= @rent.name %>, seu aluguel termina daqui a uma semana! Seja um membro consciente e devolva o seu livro até <b><%= @rent.due_date.strftime("%d / %m / %Y") %></b>
 </p>
+
+<p>
+	Caso queira devolver este livro, acesse aqui:
+	<%= link_to 'Devolver o livro',[@rent.book, @rent], method: :delete, data: { confirm: 'Tem certeza?' } %>
+</p>
+</div>
+</body>

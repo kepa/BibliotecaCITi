@@ -2,13 +2,17 @@
 <html>
 	<head>
 		<title> <%= @title %> | Biblioteca CITi </title>
+		<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
-		
-		<div id="main-cont">
+		<div class="wrapper">
+		<div id="header">
+			
+			<h1>Biblioteca CITi</h1>
 			<div id="login-box">
 				
 				<% if user_signed_in? %>
@@ -19,11 +23,23 @@
 					<%= link_to "Sign up", new_user_registration_path %> |
 					<%= link_to "Login", new_user_session_path %>
 				<% end %>
+			</div>	
+		</div>
+   		
+   		<div id="main-cont">
 			
-			</div>
+			
+			
 			
 			<%= yield %>
-		
+			<div class="push"></div>
 		</div>
+		</div>
+		
+		<div class="footer">
+			
+
+		</div>
+		
 	</body>
 </html>
