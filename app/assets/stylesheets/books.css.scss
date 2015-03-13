@@ -46,3 +46,18 @@
 	height:200px;
 	background-image: image-url("footer.png");
 }
+
+.statusBar {
+	//display: block;
+	padding-top: 12px !important;
+	margin-top: 2px !important;
+}
+
+.status {
+	padding: 5px !important;
+	margin-top: 2px !important;
+}
+
+.status:hover {
+	text-decoration: none;
+}
