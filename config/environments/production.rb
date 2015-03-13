@@ -87,5 +87,5 @@ Rails.application.configure do
   :user_name => "citi_mail",
   :password => "kDYPtjaYnDDfPYEtDZ6KpzDj"
 }
-
+  ENV["SECRET_KEY_BASE"] = "7a3d6edc8ebb09cacabf76d90ea7fdf1828bd41aa8f57fbb3b43542389c1dfaa8780126d00a93ad98ceeb1ee6cebd156596216631abb29bd5d1be5133701041d"
 end
