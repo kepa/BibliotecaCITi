@@ -9,6 +9,6 @@ development:
   encoding: unicode
   database: biblioteca
   pool: 5
-  username: biblioteca_citi
+  username: citi_biblioteca
   password: citi2015
 
