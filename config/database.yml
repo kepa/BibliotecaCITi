@@ -6,7 +6,7 @@
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
 development:
   adapter: postgresql
-  encoding: unicode
+  #encoding: unicode
   database: biblioteca
   host: 127.0.0.1
   #port: 5432
