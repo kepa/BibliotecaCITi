@@ -7,10 +7,8 @@
 development:
   adapter: postgresql
   #encoding: unicode
-  database: biblioteca
+  database: bib_citi
   host: localhost
-  #port: 5432
-  #pool: 5
   username: citi_biblioteca
   password: citi2015
   
