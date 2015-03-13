@@ -6,10 +6,10 @@
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
 development:
   adapter: postgresql
-  #encoding: unicode
+  encoding: unicode
   database: bib_citi
   host: localhost
   username: citi_biblioteca
   password: citi2015
-  
+  pool: 5
 
