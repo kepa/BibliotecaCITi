@@ -42,6 +42,7 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 gem "letter_opener", :group => :development
 gem 'letter_opener_web', '~> 1.2.0', :group => :development
