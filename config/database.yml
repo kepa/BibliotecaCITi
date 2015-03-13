@@ -8,7 +8,7 @@ development:
   adapter: postgresql
   #encoding: unicode
   database: biblioteca
-  host: 127.0.0.1
+  host: localhost
   #port: 5432
   #pool: 5
   username: citi_biblioteca
