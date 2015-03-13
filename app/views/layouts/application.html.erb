@@ -9,36 +9,29 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<div class="wrapper">
-		<div id="header">
-			
-			<h1>Biblioteca CITi</h1>
-			<div id="login-box">
-				
-				<% if user_signed_in? %>
-					Logged in as <strong><%= current_user.email %></strong>.
-					<%= link_to 'Edit profile', edit_user_registration_path %> |
-					<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-				<% else %>
-					<%= link_to "Sign up", new_user_registration_path %> |
-					<%= link_to "Login", new_user_session_path %>
-				<% end %>
-			</div>	
-		</div>
-   		
-   		<div id="main-cont">
-			
-			
-			
-			
-			<%= yield %>
-			<div class="push"></div>
-		</div>
-		</div>
 		
-		<div class="footer">
-			
-
+		<div class="container-fluid">
+			<% if controller_name != ('books')  %>
+				<div id="header">
+					
+					<h1>Biblioteca CITi</h1>
+					
+				</div>
+			<% end %>	
+				<div id="main-cont">
+				<div class="row">	
+					
+						
+				
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						
+						<%= render "shared/navbar" %>
+						<%= yield %>
+					
+					</div>
+				</div>
+			</div>
 		</div>
 		
 	</body>

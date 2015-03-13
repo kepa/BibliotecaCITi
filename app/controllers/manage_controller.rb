@@ -6,4 +6,10 @@ class ManageController < ApplicationController
   	@title = "Emprestimos atrasados"
 
   end
+
+  def home
+  	@books = Book.all
+  	@title = "Inicial"
+  end	
+
 end

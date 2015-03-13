@@ -1,0 +1,23 @@
+<% @books.each do |book| %>
+
+  <% if book.taken? %>
+    <div id="item-book">
+  <% else %>
+    <div id="item-book-ok">
+  <% end %> 
+  
+  <%= link_to(book) do %>  
+      <p><%= book.title %> 
+      <%= book.author %></p>
+  <% end %>
+    </div>    
+
+<% end %>
+
+
+<br>
+
+
+<% if user_signed_in? %>
+  <%= link_to 'New Book', new_book_path %>
+<% end %>

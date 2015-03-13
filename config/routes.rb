@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
-
   get 'manage/tardies'
   match '/atrasos' => 'manage#tardies', via: [:get, :post]
 
@@ -12,7 +8,7 @@ Rails.application.routes.draw do
     resources :rents, :except => [:edit,:show,:index]
   end  
 
-  root to: "books#index"
+  root to: "manage#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
