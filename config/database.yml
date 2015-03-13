@@ -11,6 +11,6 @@ development:
   pool: 5
   username: citi_biblioteca
   password: citi2015
-  host: localhost
+  host: 127.0.0.1
   port: 5432
 
