@@ -16,7 +16,7 @@
       
       <%= form_tag books_path, :method => 'get', :class => "navbar-form navbar-left" do %>
       <div class="form-group">
-        <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Digite o nome do seu cliente" %>
+        <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Digite o título do livro" %>
         <%= submit_tag "Pesquisar", :class => "btn btn-default" , name: nil %>
       </div>
       <% end %>
@@ -38,15 +38,6 @@
 <% if !@pesquisa.nil? %>
   
     <table class="table table-striped table-bordered">
-      <% if controller_name == ('books')  %>
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Autor</th>
-          <th>Alugado?</th>
-        </tr>
-      </thead>
-     <% end %> 
      
       <tbody>
        <% @pesquisa.each do |book| %> 

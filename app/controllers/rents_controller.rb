@@ -27,10 +27,13 @@ class RentsController < ApplicationController
         if @rent.save
           @book.update(taken: true)
           @book.save
+          
           RentMailer.delay(run_at: 2.minutes.from_now).rent_confirmation(@rent)
           RentMailer.delay(run_at: @rent.due_date).rent_warning(@rent)
           RentMailer.delay(run_at: @rent.due_date).rent_end(@rent)
-          format.html { redirect_to @rent.book, notice: 'Parabéns livro alugado!' }         
+          
+          flash[:success] = "Parabéns livro alugado!"
+          format.html { redirect_to @rent.book }         
         else
           format.html { render :new }
         end
@@ -38,7 +41,8 @@ class RentsController < ApplicationController
 
     else   
       respond_to do |format|
-         format.html { redirect_to @book, notice: 'Livro já alugado!' } 
+         flash[:danger] = "Livro já alugado!"
+         format.html { redirect_to @book } 
       end 
     end
      
@@ -56,7 +60,9 @@ class RentsController < ApplicationController
       if @rent.save
         @book.update(taken: false)
         @book.save
-        format.html { redirect_to @rent.book, notice: 'Parabéns livro devolvido!' }
+        
+        flash[:success] = "Parabéns livro devolvido!"
+        format.html { redirect_to @rent.book }
       else
         format.html { render :new }
       end

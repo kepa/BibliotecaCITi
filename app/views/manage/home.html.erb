@@ -1,19 +1,28 @@
 <% @books.each do |book| %>
-
-  <% if book.taken? %>
-    <div id="item-book">
-  <% else %>
-    <div id="item-book-ok">
-  <% end %> 
+<div class="col-md-3">
   
-  <%= link_to(book) do %>  
-      <p><%= book.title %> 
-      <%= book.author %></p>
-  <% end %>
-    </div>    
+  <% if book.taken %>
 
-<% end %>
+    <div class="panel panel-danger">
+  
+  <% else %>
 
+    <div class="panel panel-success">
+  
+  <% end %>    
+      <div class="panel-heading"><%= book.title %></div>
+      <%= link_to(book) do %>
+      
+        <div class="panel-body">
+        
+        <p>
+        <%= book.author %></p>
+      
+      </div>
+      <% end %>
+    </div>
+    </div>
+    <% end %>
 
 <br>
 

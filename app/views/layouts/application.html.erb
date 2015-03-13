@@ -18,20 +18,28 @@
 					
 				</div>
 			<% end %>	
-				<div id="main-cont">
+				
 				<div class="row">	
 					
 						
 				
 					<div class="col-md-2"></div>
-					<div class="col-md-8">
+					<div class="col-md-8" id="main-cont">
 						
 						<%= render "shared/navbar" %>
-						<%= yield %>
-					
+						
+						<% flash.each do |key, value| %>
+    						<div class="alert alert-<%= key %>"><%= value %></div>
+  						<% end %>
+
+						<div class="container-fluid">
+							<div class="row">
+								<%= yield %>
+							</div>	
+						</div>
 					</div>
 				</div>
-			</div>
+			
 		</div>
 		
 	</body>
