@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 
 gem 'devise'
+gem 'domp'
 
 gem 'delayed_job_active_record'
 gem 'daemons'
@@ -49,3 +50,6 @@ gem 'bootstrap-sass'
 gem "letter_opener", :group => :development
 gem 'letter_opener_web', '~> 1.2.0', :group => :development
 
+
+gem "omniauth"
+gem "omniauth-google"

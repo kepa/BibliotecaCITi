@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'manage/tardies'
   match '/atrasos' => 'manage#tardies', via: [:get, :post]
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :books do
     resources :rents, :except => [:edit,:show,:index]
   end  
