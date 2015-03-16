@@ -4,7 +4,7 @@
 		<title> <%= @title %> | Biblioteca CITi </title>
 		<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>		
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
 	</head>
@@ -14,7 +14,8 @@
 			<% if controller_name != ('books')  %>
 				<div id="header">
 					
-					<h1>Biblioteca CITi</h1>
+					<%= image_tag("logo.png") %>
+					<!--h1>Biblioteca CITi</h1-->
 					
 				</div>
 			<% end %>	
@@ -41,6 +42,6 @@
 				</div>
 			
 		</div>
-		
+			
 	</body>
 </html>

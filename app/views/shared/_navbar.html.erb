@@ -27,7 +27,6 @@
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
         <li><%= link_to "Login", new_user_session_path %></li>
-        <li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:google) %></li>
         <% end %>
       </ul>
     </li>
@@ -46,11 +45,11 @@
           <td><%= link_to book.title, book %></td>
           <td><%= book.author %></td>
           <% if book.taken %>    
-            <td class="alert alert-danger">Alugado!</td>
+            <td class="statusBar"><a class="alert alert-danger status"> Alugado!</a></td>
           <% else %>
-              <td class="alert alert-success">Disponível!</td>
+              <td class="statusBar"><a class="alert alert-success status"> Disponível! </a></td>
              </div>
-          <% end %>    
+          <% end %>     
         
         </tr>
       <% end %>

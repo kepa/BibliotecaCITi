@@ -28,8 +28,14 @@
           	
           	<% @book.rents.each do |rent| %>
 
-          		<p><%= rent.name %></p>
-              <p><%= rent.due_date.strftime("%d / %m / %Y")  %></p>
+          		<p>
+                <strong>Locatário:</strong>
+                <%= rent.name %>
+              </p>
+              <p>
+                <strong>Data de devolução:</strong>
+                <%= rent.due_date.strftime("%d / %m / %Y")  %>
+              </p>
               <p><%= link_to 'Devolver o livro',[@book, rent], method: :delete, data: { confirm: 'Tem certeza?' } %></p>
 
           	<% end %>
